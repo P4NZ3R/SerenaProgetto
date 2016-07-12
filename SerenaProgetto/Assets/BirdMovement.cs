@@ -7,6 +7,7 @@ public class BirdMovement : MonoBehaviour {
     public Vector3 gravity;
     public Vector3 flapVelocity;
     public float maxSpeed = 5f;
+    public float forwardSpeed = 1f;
 
     bool didFlap = false;
 
@@ -26,11 +27,17 @@ public class BirdMovement : MonoBehaviour {
 
 	void FixedUpdate () 
     {
+        velocity.x = forwardSpeed;
         velocity += gravity * Time.deltaTime;
+
         if (didFlap == true)
         {
             didFlap = false;
-            velocity += flapVelocity;  
+            if (velocity.y < 0)
+
+                velocity.y = 0;
+                velocity += flapVelocity;
+            
         }
 
         velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
