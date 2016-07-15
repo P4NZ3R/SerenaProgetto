@@ -12,7 +12,7 @@ public class BirdMovement : MonoBehaviour {
     bool didFlap = false;
     bool isAlive = true;
 	void Start () {
-	
+        Time.timeScale = 1;
 	}
     void Update ()
     {
