@@ -50,7 +50,8 @@ public class BirdMovement : MonoBehaviour {
     {
         Debug.Log("death");
         isAlive = false;
-        Invoke("ReloadGame", 5f);
+        Invoke("ReloadGame", 1f);
+        Time.timeScale = 0.5f;
     }
 
     void ReloadGame()
