@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GroundMover : MonoBehaviour {
     
-    float speed = -2f;
+    float speed = 0.9f;
 	void FixedUpdate () 
     {
         Vector3 pos = transform.position;
